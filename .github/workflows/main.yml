@@ -9,6 +9,8 @@ on:
   
 jobs:
   experimental-greed:
+    env:
+      MY_ENV: "John Doe"
     runs-on: ubuntu-latest
     steps:
       - name: Greet the User
@@ -17,3 +19,7 @@ jobs:
         run: ls -l
       - uses: actions/checkout@v2
       - run: ls -l
+      - name: Show env vars
+        run: |
+          echo "Hello $MY_ENV"
+          echo "Hello $GITHUB_ACTOR"
