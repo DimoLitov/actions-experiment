@@ -2,6 +2,11 @@ name: Manual workflow testing
 
 on:
   workflow_dispatch:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+  
 jobs:
   experimental-greed:
     runs-on: ubuntu-latest
